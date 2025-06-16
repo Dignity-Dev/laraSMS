@@ -2,21 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/', function(){
-    return "This is homepage";
+Route::get('/', function () {
+    return view('home');
 });
-
-Route::view('contact', 'contact-us');
-route::get('about', function(){
-    $name ="Basheer Haadi";
-    $email = "bashjr@gmail.com";
-    return view('about-us')->with([
-        'name' => $name,
-        'email' => $email
-    ]);
+Route::get('/about', function () {
+    return view('about-us');
 });
-
-Route::get('/',function(){
-    return view('home')->name('Homepage');
+Route::get('/contact', function () {
+    return view('contact-us');
+});
+Route::get('/portfolio', function () {
+    return view('portfolio');
 });
